@@ -9,7 +9,7 @@ fn main() {
     let el = EventLoop::new();
     let wb = WindowBuilder::new().with_title("A fantastic window!");
 
-    let windowed_context = ContextBuilder::new().build_windowed(wb, &el).unwrap();
+    let windowed_context = ContextBuilder::new().with_vsync(true).build_windowed(wb, &el).unwrap();
 
     let windowed_context = unsafe { windowed_context.make_current().unwrap() };
 
